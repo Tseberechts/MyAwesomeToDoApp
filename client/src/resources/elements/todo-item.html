@@ -1,0 +1,15 @@
+<template>
+  <require from="../value-converters/humandate"></require>
+  <div>
+    <span class="${item.isFinished? 'line-trough text-muted' : ''}">
+      <span>${item.text}</span>
+      <span if.bind="item.hasDeadline">
+        <span> - </span>
+        <span>${item.deadline | humanDate:"DD/MM/YYYY HH:mm"}</span>
+      </span>
+    </span>
+
+    <i class="fa fa-check pull-right cursor-pointer" click.delegate="item.isFinished = !item.isFinished"></i>
+    <i class="fa fa-trash pull-right cursor-pointer" click.delegate="removeItem()"></i>
+  </div>
+</template>

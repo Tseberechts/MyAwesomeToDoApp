@@ -1,0 +1,13 @@
+@import '../../../node_modules/faceman/scss/faceman';
+
+body{
+  background-color: $primary-color;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.line-trough {
+  text-decoration: line-through;
+}

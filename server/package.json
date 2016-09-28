@@ -1,0 +1,16 @@
+{
+  "name": "myawesomeappserver",
+  "version": "1.0.0",
+  "description": "serves my awesome todo app",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.14.0",
+    "morgan": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Thomas Seberechts <thomas@itprosolutions.be>",
+  "license": "ISC"
+}

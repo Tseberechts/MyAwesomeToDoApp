@@ -1,0 +1,35 @@
+<template>
+  <require from="./font-awesome.min.css"></require>
+  <require from="./resources/styles/main.css"></require>
+  <require from="./resources/elements/todo-item"></require>
+  <require from="./resources/value-converters/itemssort"></require>
+
+  <div class="row center-xs middle-xl p-a-16 h-xs-100vh bg-primary">
+    <div class="col-sm-10 col-md-8 col-lg-6 col-xxl-4">
+      <h1 class="brand m-b-32 m-t-16 m-x-auto text-xs-center text-white">My Awesome ToDo App</h1>
+      <div class="bg-white br-8 p-a-32 shadow-3">
+        <h3 class="text-uppercase">To do:</h3>
+        <todo-item if.bind="datedItems" repeat.for="i of datedItems | itemsSort" item.bind="i"></todo-item>
+        <todo-item if.bind="unDatedItems" repeat.for="i of unDatedItems" item.bind="i"></todo-item>
+        <p show.bind="datedItems.length === 0 && unDatedItems.length === 0">You seem to have nothing to do. Lucky you!</p>
+        <hr class="m-y-16">
+        <form class="bg-clouds br-4 p-a-16" submit.delegate="addItem()" ref="addToDoForm" novalidate>
+          <fieldset class="m-b-16">
+            <label for="todo-input">Thing I need to do:</label>
+            <input id="todo-input" type="text" ref="newToDoText">
+          </fieldset>
+          <fieldset class="m-b-16">
+            <label><input type="checkbox" checked.bind="hasDeadline"> Has Deadline</label>
+          </fieldset>
+          <fieldset class="m-b-16" show.bind="hasDeadline">
+            <label for="datepicker">Deadline</label>
+            <input type="datetime-local" id="datepicker" ref="newToDoDate">
+          </fieldset>
+          <button class="btn-primary d-block w-xs-100" type="submit">
+            <i class="fa fa-save"></i> Save
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>
