@@ -1,0 +1,13 @@
+{
+  "name": "myawesometodoapp",
+  "version": "1.0.0",
+  "description": "main package.json for my awesome todo app",
+  "main": "server/index.js",
+  "scripts": {
+	"start": "cd server && npm run start",
+	"prestart": "npm run build",
+	"build": "cd client && au build --dev"
+  },
+  "author": "Thomas Seberechts <thomas@itprosolutions.be>",
+  "license": "ISC"
+}
