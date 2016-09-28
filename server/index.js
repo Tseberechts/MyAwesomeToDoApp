@@ -16,6 +16,6 @@ app.get('/*', (req, res) => {
 	res.sendFile(req.path !== '/' && fs.existsSync(file) ? file : index);
 });
 
-app.listen('8080', () => {
+app.listen('80', () => {
 	console.log('MyAwesomeToDoApp running on port 8080');
 });
