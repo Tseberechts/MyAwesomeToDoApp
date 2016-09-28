@@ -17,5 +17,5 @@ app.get('/*', (req, res) => {
 });
 
 app.listen('80', () => {
-	console.log('MyAwesomeToDoApp running on port 8080');
+	console.log('MyAwesomeToDoApp running on port 80');
 });
